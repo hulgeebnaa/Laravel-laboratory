@@ -11,15 +11,19 @@ class PagesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function home()
+    {
+        return view('pages.home');
+    }
     public function index()
     {
-        $title = "Index";
+        $title = "Welcome To Laboratories";
         return view('pages.index', compact("title"));
     }
     public function services()
     {
         $data = array(
-            'title' => 'services',
+            'title' => 'Services',
             'services' => ['CSS', 'HTML', 'JavaScript']
         );
         return view('pages.services')->with($data);
